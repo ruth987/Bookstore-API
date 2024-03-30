@@ -25,10 +25,7 @@ const BookSchema = mongoose.Schema(
             required: false,
             
         },
-        category: {
-            type: String,
-            required: true,
-        },
+        categories: [{type: mongoose.Schema.Types.ObjectId, ref: "Category"}]
 
     },
     {

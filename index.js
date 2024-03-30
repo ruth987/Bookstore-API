@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const book = require('./models/book.model.js');
 const bookRoute = require('./routes/book.route.js');
+const categoryRoute = require('./routes/category.route.js');
 const app = express();
 
 //middleware
@@ -10,6 +11,7 @@ app.use(express.urlencoded({extended: false}));
 
 //routes
 app.use('/api/books', bookRoute);
+app.use('/api/categories', categoryRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
